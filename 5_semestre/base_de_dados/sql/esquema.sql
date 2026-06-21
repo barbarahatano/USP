@@ -424,7 +424,3 @@ CREATE TABLE Descarte (
         REFERENCES Ativo(numeroSerie)
         ON DELETE CASCADE
 );
-
--- =============================================================================
--- FIM DO SCRIPT esquema.sql
--- =============================================================================

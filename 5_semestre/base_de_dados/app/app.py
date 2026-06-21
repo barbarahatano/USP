@@ -437,9 +437,9 @@ def consultar_historico_ativo(conn):
                 id_m, tipo, ini, fim, dur, tecs, qtd_p = r
                 print(f"  ┌── Manutenção #{id_m}  [{tipo}]")
                 print(f"  │   Início : {ini}   Fim: {fim or 'Em andamento'}", end="")
-                print(f"   ({dur} dias)" if dur is not None else "")
+                print(f"   ({int(dur)} dias)" if dur is not None else "")
                 print(f"  │   Técnicos : {tecs}")
-                print(f"  │   Peças utilizadas: {qtd_p} tipo(s)")
+                print(f"  │   Peças utilizadas: {int(qtd_p)} tipo(s)")
                 print(f"  └{'─'*50}")
                 print()
 
@@ -544,7 +544,7 @@ def consultar_ranking_pecas(conn):
             for i, r in enumerate(rows, 1):
                 nome, fab, qtd, em_man, custo = r
                 custo_str = f"R$ {custo:.2f}" if custo else "N/A"
-                print(f"  {i:<4} {nome:<35} {qtd:<8} {em_man:<14} {custo_str}")
+                print(f"  {i:<4} {nome:<35} {int(qtd):<8} {int(em_man):<14} {custo_str}")
             linha()
 
     except oracledb.DatabaseError as e:
@@ -591,7 +591,7 @@ def consultar_ativos_sem_manutencao(conn):
                 print(f"  Série   : {serie}")
                 print(f"  Nome    : {nome}  ({tipo})")
                 print(f"  Local   : {local}")
-                print(f"  Instalado em: {inst}  |  {dias} dias sem manutenção")
+                print(f"  Instalado em: {inst}  |  {int(dias)} dias sem manutenção")
                 print(f"  Status  : {status}")
                 linha()
 
@@ -610,6 +610,10 @@ def consultar_custo_fornecedores(conn):
     titulo("Consulta: Custo por Fornecedor no Período")
     data_ini = ler_data("Data inicial")
     data_fim = ler_data("Data final")
+    if data_fim < data_ini:
+        erro("A data final não pode ser anterior à data inicial.")
+        pausar()
+        return
 
     sql = """
         SELECT
