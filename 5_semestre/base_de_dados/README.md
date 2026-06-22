@@ -29,8 +29,6 @@ bd/
    DB_PASSWORD=sua_senha
    DB_DSN=host:porta/service_name
    ```
-   > **Dica**: No SQL Developer, ao criar/editar uma conexão, você verá o hostname, porta e service name.
-
 ---
 
 ## 2. Criar o banco de dados (no SQL Developer)
