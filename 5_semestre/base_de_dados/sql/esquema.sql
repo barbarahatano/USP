@@ -13,6 +13,9 @@
 -- =============================================================================
 
 -- Remocao de tabelas existentes (ordem inversa das dependencias FK)
+
+
+
 BEGIN
   EXECUTE IMMEDIATE 'DROP TABLE PreditivaMedicao CASCADE CONSTRAINTS';
 EXCEPTION WHEN OTHERS THEN NULL; END;

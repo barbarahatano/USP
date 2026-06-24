@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Administração — Poções e Soluções</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Poções e Soluções</h1>
+    <p class="subtitulo">Painel de Administração</p>
+    <nav>
+      <a href="index.html">Ver loja</a>
+    </nav>
+  </header>
+
+  <div class="admin-container">
+    <h1>Gerenciar Poções</h1>
+    <p class="subtitulo">Cadastre, visualize e remova as poções disponíveis na loja.</p>
+
+    <form id="form-cadastro">
+      <div>
+        <label for="nome">Nome da poção</label>
+        <input type="text" id="nome" name="nome" required />
+      </div>
+      <div>
+        <label for="descricao">Descrição</label>
+        <textarea id="descricao" name="descricao" required></textarea>
+      </div>
+      <div>
+        <label for="imagem">URL da imagem</label>
+        <input type="text" id="imagem" name="imagem" placeholder="https://..." required />
+      </div>
+      <div>
+        <label for="preco">Preço (em moedas)</label>
+        <input type="number" id="preco" name="preco" min="0" step="0.01" required />
+      </div>
+      <button type="submit">Cadastrar Poção</button>
+      <p id="feedback-cadastro" class="feedback"></p>
+    </form>
+
+    <h2>Poções Cadastradas</h2>
+    <p id="status-lista" class="mensagem-status">Carregando...</p>
+    <div class="lista-admin" id="lista-admin"></div>
+  </div>
+
+  <footer>
+    <p>&copy; 1867–2026 Poções e Soluções — Painel interno de administração.</p>
+  </footer>
+
+  <script src="js/admin.js"></script>
+</body>
+</html>

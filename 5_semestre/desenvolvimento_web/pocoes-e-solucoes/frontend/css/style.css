@@ -1,0 +1,351 @@
+:root {
+  --bg-principal: #14101b;
+  --bg-secao: #1d1727;
+  --bg-card: #241b33;
+  --roxo: #5b2a86;
+  --roxo-claro: #9b6fd6;
+  --dourado: #23ff4b;
+  --texto: #ffffff;
+  --texto-suave: #ffffff;
+  --borda: #382a4d;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  background-color: var(--bg-principal);
+  color: var(--texto);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--dourado);
+  text-decoration: none;
+}
+
+/* ---------- Cabeçalho ---------- */
+header {
+  background-color: var(--bg-secao);
+  border-bottom: 1px solid var(--borda);
+  padding: 1.5rem 2rem;
+  text-align: center;
+  flex-wrap: wrap;  
+}
+
+header h1 {
+  font-size: 2.4rem;
+  letter-spacing: 2px;
+  color: var(--dourado);
+}
+
+header p.subtitulo {
+  color: var(--texto-suave);
+  font-style: italic;
+  margin-top: 0.3rem;
+}
+
+nav {
+  margin-top: 1rem;
+}
+
+nav a {
+  margin: 0 1rem;
+  font-size: 0.95rem;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 2px;
+  transition: border-color 0.2s;
+}
+
+nav a:hover {
+  border-color: var(--dourado);
+}
+
+/* ---------- Seções gerais ---------- */
+section {
+  padding: 3rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+section h2 {
+  color: var(--roxo-claro);
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  border-left: 4px solid var(--dourado);
+  padding-left: 0.6rem;
+}
+
+
+/* ---------- Sobre a loja ---------- */
+.sobre p {
+  color: var(--texto-suave);
+  max-width: 750px;
+  text-indent: 2em;
+  text-align: justify;
+}
+
+/* ---------- Histórico ---------- */
+.historia {
+  background-color: var(--bg-secao);
+}
+
+.historia-conteudo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.historia-texto {
+  flex: 1 1 350px;
+  color: var(--texto-suave);
+  text-indent: 2em;
+  text-align: justify;
+}
+
+.historia-fotos {
+  flex: 1 1 350px;
+  display: flex;
+  gap: 1rem;
+}
+
+.historia-fotos img {
+  width: 250px;
+  border-radius: 6px;
+  border: 1px solid var(--borda);
+  filter: sepia(35%) saturate(70%);
+}
+
+/* ---------- Produtos ---------- */
+.produtos-lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.card-pocao {
+  background-color: var(--bg-card);
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card-pocao:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(91, 42, 134, 0.4);
+}
+
+.card-pocao img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  border-bottom: 1px solid var(--borda);
+}
+
+.card-pocao .conteudo {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.card-pocao h3 {
+  color: var(--dourado);
+  font-size: 1.15rem;
+  margin-bottom: 0.4rem;
+}
+
+.card-pocao p.descricao {
+  color: var(--texto-suave);
+  font-size: 0.9rem;
+  flex: 1;
+  text-align: justify;
+}
+
+.card-pocao .preco {
+  color: var(--roxo-claro);
+  font-weight: bold;
+  margin: 0.8rem 0;
+  font-size: 1.1rem;
+}
+
+.botao-comprar {
+  background-color: var(--roxo);
+  color: var(--texto);
+  border: none;
+  padding: 0.6rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition: background-color 0.2s;
+}
+
+.botao-comprar:hover {
+  background-color: var(--roxo-claro);
+  color: #1a1325;
+}
+
+.mensagem-status {
+  color: var(--texto-suave);
+  font-style: italic;
+}
+
+/* ---------- Rodapé ---------- */
+footer {
+  background-color: var(--bg-secao);
+  border-top: 1px solid var(--borda);
+  padding: 2rem;
+  text-align: center;
+  color: var(--texto-suave);
+  font-size: 0.9rem;
+}
+
+footer .contato {
+  margin-top: 0.5rem;
+}
+
+footer .contato span {
+  display: inline-block;
+  margin: 0 0.8rem;
+}
+
+/* ---------- Página de Administração ---------- */
+.admin-container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+
+.admin-container h1 {
+  color: var(--dourado);
+  margin-bottom: 0.3rem;
+}
+
+.admin-container p.subtitulo {
+  color: var(--texto-suave);
+  margin-bottom: 2rem;
+}
+
+form#form-cadastro {
+  background-color: var(--bg-card);
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+  padding: 1.5rem;
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+form#form-cadastro label {
+  display: block;
+  margin-bottom: 0.3rem;
+  color: var(--texto-suave);
+  font-size: 0.9rem;
+}
+
+form#form-cadastro input,
+form#form-cadastro textarea {
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: 6px;
+  border: 1px solid var(--borda);
+  background-color: var(--bg-principal);
+  color: var(--texto);
+  font-family: inherit;
+}
+
+form#form-cadastro textarea {
+  resize: vertical;
+  min-height: 70px;
+}
+
+form#form-cadastro button {
+  background-color: var(--roxo);
+  color: var(--texto);
+  border: none;
+  padding: 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+form#form-cadastro button:hover {
+  background-color: var(--roxo-claro);
+  color: #1a1325;
+}
+
+.lista-admin {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.item-admin {
+  background-color: var(--bg-card);
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.item-admin img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.item-admin .info {
+  flex: 1;
+}
+
+.item-admin .info h4 {
+  color: var(--dourado);
+}
+
+.item-admin .info p {
+  color: var(--texto-suave);
+  font-size: 0.85rem;
+}
+
+.botao-remover {
+  background-color: #6e1f33;
+  color: var(--texto);
+  border: none;
+  padding: 0.5rem 0.9rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.botao-remover:hover {
+  background-color: #9a2c47;
+}
+
+.feedback {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.feedback.erro {
+  color: #ff8a8a;
+}
+
+.feedback.sucesso {
+  color: #8fdba0;
+}

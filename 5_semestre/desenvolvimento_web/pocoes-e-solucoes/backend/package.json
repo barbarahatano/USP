@@ -1,0 +1,17 @@
+{
+  "name": "pocoes-e-solucoes-backend",
+  "version": "1.0.0",
+  "description": "Web Service da loja Poções e Soluções (SCC0219 - Atividade Prática 2)",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "sequelize": "^6.37.3",
+    "sqlite3": "^5.1.7"
+  }
+}
