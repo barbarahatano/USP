@@ -40,16 +40,6 @@ gcc -o organizacao_arquivos main.c [demais arquivos .c] -Wall
 ./organizacao_arquivos
 ```
 
-## 📁 Estrutura do projeto
-
-```
-├── main.c
-├── binario.c / binario.h      # manipulação do arquivo binário
-├── arvoreB.c / arvoreB.h      # implementação da Árvore B
-├── dados.csv                  # arquivo de entrada de exemplo
-└── README.md
-```
-
 ## 📚 Aprendizados
 
 Este projeto aprofundou conceitos de:
