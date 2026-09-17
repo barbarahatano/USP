@@ -42,6 +42,7 @@ dados são reiniciados sempre que o servidor é reiniciado.
 Durante o desenvolvimento, você pode usar `npm run dev` para reiniciar o servidor
 automaticamente a cada alteração no código (usa `node --watch`).
 
+
 ### Endpoints da API
 
 | Método | Rota                  | Descrição                                  |
